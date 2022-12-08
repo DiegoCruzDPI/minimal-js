@@ -9,9 +9,82 @@
   <li id="sfo" class="west">San Francisco</li>
 </ul>
 
+<div id="bye">Click me</div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
 <script>
   // Write your JS here.
   // Open the JS console and refresh the page to see the output.
+console.log(`Your lucky number is ${7*6}`);
 
-  
+let name = "Diego"
+console.log(`Your name is ${name}`)
+name = "Aria"
+console.log(`Hi ${name}`)
+
+//remember we use camelCase not snake_case for JS
+const meDiego = "Cruz"
+console.log(`I am ${meDiego}`)
+
+// function with argument.. not that bad just rememver you need to call the function if you are not sure of what to expect
+function greet(name){
+  console.log(`Hello there ${name}`);
+}
+greet("Diego")
+
+//look into your for loop logic...you are still pretty dumb
+for (let i = 4; i<6; i++){
+  console.log(i*i);
+}
+
+// make sure you do console log bro
+let apples =["long","short","happy","sad"]
+console.log(apples[2]);
+console.log(apples.length)
+
+// literally loops over the array that we created and calls a variable on it so that we can use it
+// the exact same as each do
+apples.forEach(function(appleDescription){
+  console.log(`I know so many ${appleDescription}`);
+});
+
+// boom this is the same setting a default range for what the random number could be
+let rollDice = Math.floor(Math.random()* 6);
+console.log(`${rollDice}`)
+
+let moves =["rock","paper","scissors"]
+
+let randomMove = Math.floor(Math.random()* 3)
+//this will make is so that the string that will be called will be random
+// so the computerMove will be equal to the string that is being passed to it
+let computerMove = moves[randomMove]
+
+if(computerMove === "rock"){
+  console.log("You lost");
+}else if (computerMove === "paper"){
+  console.log("You won");
+}else{
+  console.log("It's a tie")
+}
+
+//Fizz buzz challenge
+
+
+
+
+// you want to use "body" instead of calling the specific thing that you want to select because it is more efficient and saves you a lot of problems
+// that may be aused in the future
+$("body").on("click","#bye", function(){
+  $(".west").fadeToggle();
+})
+
+
+
+// user this so the user has the option to use these functionalities depending on weather their browser is ready to perform those acitons
+  $(document).ready(function() {
+    $("body").on("click","#bye", function(){
+  $(".west").fadeToggle();
+})
+  });
 </script>
